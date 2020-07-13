@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import config
 import asyncio
 from youtube import Youtube
@@ -90,4 +90,4 @@ def echo_msg(message):
 
 
 bot.polling()
->>>>>>> 7198667e278f206bb948a98db336e833c480edcd
+
