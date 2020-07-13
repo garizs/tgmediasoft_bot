@@ -1,0 +1,2 @@
+TGtoken = ''
+YTtoken = ''
