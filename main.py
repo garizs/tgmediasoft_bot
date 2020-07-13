@@ -1,4 +1,3 @@
-
 import config
 import asyncio
 from youtube import Youtube
@@ -16,13 +15,13 @@ channel_id = 'UCWxQrOSmSwCp8MRAWe2pJ-g'
 @disp.message_handler(commands=['start'])
 async def start(message):
     await bot.send_message(message.chat.id,
-                           "Добро пожаловать, {0.first_name}!\n".format(message.from_user, await bot.get_me()),
+                           "Добро пожаловать, {0.first_name}!\n Чтобы получить список доступных команд введите /help".format(message.from_user, await bot.get_me()),
                            parse_mode='html')
 
 
 @disp.message_handler(commands=['help'])
 async def help(message):
-    await bot.send_message(message.chat.id, 'Доступные команды:')
+    await bot.send_message(message.chat.id, 'Доступные команды:\n• /help — список доступных команд\n• /subscribe — подписаться на рассылку \n• /unsubscribe — отписаться от рассылки')
 
 
 @disp.message_handler(commands=['subscribe'])
@@ -48,7 +47,6 @@ async def error_allert(message: types.Message):
     await message.answer("Вы ввели неверную команду.\nВоспользуйтесь /help для получения списка доступных команд.")
 
 
-@disp.message_handler(commands=['test'])
 async def scheduled(wait_for):
     while True:
         await asyncio.sleep(wait_for)
@@ -67,27 +65,5 @@ async def scheduled(wait_for):
 if __name__ == '__main__':
     disp.loop.create_task(scheduled(120))
     executor.start_polling(disp, skip_updates=True)
-=======
-import telebot
 
-token = '1164004136:AAHQWSbIHwKlvcP1MeRyzZPyNXlEFJvVCuw'
-bot = telebot.TeleBot(token)
-
-
-@bot.message_handler(commands=['start'])
-def start(message):
-    bot.send_message(message.chat.id, 'Бот запущен')
-
-
-@bot.message_handler(commands=['help'])
-def help(message):
-    bot.send_message(message.chat.id, 'Доступные команды:')
-
-
-@bot.message_handler(func=lambda message: True, content_types=['text'])
-def echo_msg(message):
-    bot.send_message(message.chat.id, 'Не понимаю о чем вы')
-
-
-bot.polling()
 
