@@ -30,8 +30,8 @@ pip install -r requirements.txt
 ```
 3. После установки открываем и заполняем **config.py**:
 ```
-  TGtoken = 'ВАШ TG ТОКЕН'
-  YTtoken = 'ВАШ YT ТОКЕН'
+TGtoken = 'ВАШ TG ТОКЕН'
+YTtoken = 'ВАШ YT ТОКЕН'
 ```
 4. Запускаем, как обычно, командой **python main.py**
 
