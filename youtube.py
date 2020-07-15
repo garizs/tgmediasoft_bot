@@ -5,6 +5,7 @@ import config
 
 
 class Youtube:
+    # Метод получения ссылок всех видео на канале
     def get_all_video_in_channel(channel_id):
         api_key = config.YTtoken
         base_video_url = 'https://www.youtube.com/watch?v='
